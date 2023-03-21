@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BMI Machine</title>
+  <link rel="stylesheet" href="../dist/output.css">
+</head>
+<body class="text-center bg-neutral-900" >
+
+  <!-- FIRST SECTION -->
+
+  <section class="flex relative container mx-auto p-6">
+    <img class="border-double 
+  border-4 border-lime-400 ml-36" src="images/my logo.png" alt="" width="150">
+ 
+  <!-- FIRST NAV -->
+
+  <nav class="uppercase flex justify-between 
+  py-4 bg-black items-center left-0 top-0 right-0 border-double 
+  border-y-4 border-lime-400 my-7 pl-60 pr-40">
+  <ul class="flex">
+    <li class="py-2 px-3 text-xs my-0 hover:bg-sky-900 text-lime-400 hover:rounded-full">Home</li>
+    <li class="py-2 px-3 text-xs my-0 hover:bg-sky-900 text-lime-400 hover:rounded-full">Profile</li>
+    <li class="py-2 px-3 text-xs my-0 hover:bg-sky-900 text-lime-400 hover:rounded-full">About</li>
+    <li class="py-2 px-3 text-xs my-0 hover:bg-sky-900 text-lime-400 hover:rounded-full">Contact</li>
+  </ul></nav>
+
+  <!-- SECOND NAV -->
+
+  <nav class="justify-between items-center flex pr-20 pl-12 border-double 
+  border-4 border-lime-400 bg-black text-lime-400">
+    <ul>
+      <li class="py-2 px-3 text-xs my-0 hover:bg-sky-900 text-lime-400 hover:selection:block">Health advices</li>
+      <li class="py-2 px-3 text-xs my-0 hover:bg-sky-900 text-lime-400 hover:selection:block:">Workout guidline</li>
+      <li class="py-2 px-3 text-xs my-0 hover:bg-sky-900 text-lime-400 hover:selection:block:">Improving life_style</li>
+      <li class="py-2 px-3 text-xs my-0 hover:bg-sky-900 text-lime-400 hover:selection:block:">Nutrition Guide</li>
+      <li class="py-2 px-3 text-xs my-0 hover:bg-sky-900 text-lime-400 hover:selection:block:">Health goal guide</li>
+    </ul>
+
+  </nav>
+</section>
+  
+  
+  <h1 class=" text-lime-400 my-7 font-bold text-4xl font-sans ">BMI Calculator</h1>
+  
+    <main class="h-[150%] ml-32 flex border-double 
+    border-4 border-lime-400 mr-64">
+      <h1 class="text-center text-lime-400 font-sans ml-32 mt-56">Powered by PrinTech</h1>
+
+      <!-- FIRST DIV -->
+
+    <div class="bg-sky-900 my-7 border-double 
+                border-x-4 border-lime-400 text-lime-400 flex-col h-[100%] w-96 ml-2.5 items-center shadow-80 rounded-2xl ">
+        <label for="Hgt" class=" m-12 block text-xl font-sans text-center w-[50%]
+        ">Height
+          <input type="number" class="bg-transparent border-double 
+          border-y-4 border-lime-400" name="Hgt" id="Hgt" min="1" placeholder="height_in_cm"></label>
+        <label for="wgt" class="m-12 block text-xl font-sans text-center w-[50%]">Weight
+        <input type="number" class="bg-transparent border-double 
+        border-y-4 border-lime-400" name="wgt" id="wgt" placeholder="weight_in_kg"></label>
+        <label for="Age" class="m-12 block text-xl font-sans text-center w-[50%]">Age
+        <input type="number" class="bg-transparent border-double 
+        border-y-4 border-lime-400" name="age" id="age" min="1" placeholder="how_old_in_Years"></label>
+    
+        <button class="bg-slate-3 w-2/3 mt-4 rounded-full
+         hover:text-sky-900 hover:bg-lime-400 text-lime-400 bg-black my-7">Calculate</button>    
+    </div>
+
+<!-- SECOND DIV -->
+
+    <div class= "bg-lime-400 my-7 border-double 
+                border-x-4 border-sky-900 h-[150%] w-96 ml-2.5 
+                  items-center text-center text-lg shadow-80 rounded-2xl "> 
+                  <h2 class="m-12 block text-sky-900 text-6xl font-bold text-center w-[50%]
+                  ">MBI</h2>
+    </div>
+  </main>
+  
+  <script>
+    let para1 = document.createElement('p')
+    let para2 = document.createElement('p')
+    let li1 = document.createElement('li')
+    let li2 = document.createElement('li')
+    let li3 = document.createElement('li')
+    let li4 = document.createElement('li')
+    let div = document.querySelectorAll('div')
+    div[1].appendChild(para1)
+    div[1].appendChild(para2)
+    div[1].appendChild(li1)
+    div[1].appendChild(li2)
+    div[1].appendChild(li3)
+    div[1].appendChild(li4)
+    
+    let btn = document.querySelector('button')
+    para1 = document.querySelector('p')
+
+    btn.addEventListener('click', MBI)
+
+    function MBI(){
+      let input = document.querySelectorAll('input')
+      let Height = input[0].value
+      let Weight = input[1].value
+      para1.textContent =  Number((Weight/((Height/100)**2)).toFixed(2))
+
+      if(para1.textContent >= 40.00){
+      return (para2.textContent = 'Obese_weight range')
+              ((para2.style.backgroundColor = 'red')
+              ((li1.textContent = 'Be on dieting and nutritional guide')
+              ((li2.textContent = 'Workout on a regular basis')
+              ((li3.textContent = 'Drink more of water')
+              (li4.textContent = 'Be on medical check atmost monthly')))))
+    }
+    else if(para1.textContent > 30){
+      return (para2.textContent = 'over_weight range')
+              ((para2.style.backgroundColor = 'yellow')
+              ((li1.textContent = 'Be dieting and nutritional guide')
+              ((li2.textContent = 'Workout on a regular basis')
+              ((li3.textContent = 'Drink more of water')
+              (li4.textContent = 'Be on medical check atleast monthly')))))
+    }
+    else if(para1.textContent >= 20){
+      return (para2.textContent = 'Healthy_weight range')
+              ((para2.style.backgroundColor = 'green')
+              (li1.textContent = 'Very good healthy condition'))
+    }
+    else{ return (para2.textContent = 'Under_weight range')
+              ((para2.style.backgroundColor = 'brown')
+             ((li1.textContent = 'Be on dieting and nutritional guide')
+              ((li2.textContent = 'Sleep and rest More')
+              ((li3.textContent = 'Focus on being healthy')
+              (li4.textContent = 'Be on medical check atmost monthly')))))  
+  }
+    
+    }
+
+   
+  </script>
+    
+  
+</body>
+</html>

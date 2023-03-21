@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BVAS Machine</title>
+  <link rel="stylesheet" href="../dist/output.css">
+</head>
+<body class="" >
+  <h1 class="text-center text-red-600 bg-black py-2">BMI Calculator</h1>
+  <main class="bg-red-700 h-screen flex">
+         <div class="bg-green-800 h-[100%] ">
+        <label for="Weight" class=" block font-sans text-2xl">Weight</label>
+        <input type="number" name="weight" id="weight" class="outline-none border-y-4
+         border-y-green-400 bg-transparent" placeholder="weight in kg" min="1"> <br>
+         <label for="height" class=" block font-sans text-2xl">height</label>
+        <input type="number" name="height" id="height" class="outline-none border-y-4
+         border-y-green-400 bg-transparent" placeholder="height in cm" min="1"> <br>
+         <button class="mt-4 bg-slate-300 text-white w-2/3 rounded-full hover:bg-slate-600 hover:text-slate-800">Check Status</button>
+      </div>
+      <div class="bg-white">
+      <h2 class="font-sans text-2xl text-blue-700">
+        Status of your Body Mass
+      </h2>
+      </main>
+  
+    <script>
+      let para1 = document.createElement('p')
+      let para2 = document.createElement('p')
+      let div = document.querySelectorAll('div')
+      div[1].appendChild(para1)
+      div[1].appendChild(para2)
+
+    
+    
+
+      
+  
+  
+    </script>
+  
+</body>
+</html>

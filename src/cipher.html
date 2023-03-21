@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ROT13</title>
+  <link rel="stylesheet" href="../dist/output.css">
+</head>
+<body>
+  <main class=" bg-black h-screen flex justify-center items-center">
+    <h1>ROT13</h1>
+    <div class="shadow-2xl bg-red-500 my-7 border-double 
+    border-x-4 border-lime-400 text-lime-400 flex-col h-[100%] w-96 ml-2.5 items-center text-center shadow-80 rounded-2xl ">
+      
+      <label for="text" class="font-sans m-14 block text-6xl font-bold text-center w-[50%]
+      ">Caesars Cipher</label>
+      <input type="text" name="num" id="num" min="0" class=" py-1.5 items-center 3 w-2/3 bg-transparent border-double 
+      border-y-4 border-lime-400">
+            
+  
+    </div>
+  </main>
+
+  
+</body>
+<script>
+  let para = document.createElement('p')
+  let div = document.querySelector('div')
+
+  div.appendChild(para)
+
+      let input = document.querySelector('input')
+
+      para = document.querySelector('p')
+      para.style.background = 'White'
+
+      input.addEventListener('change', rot)
+      
+  function rot(str){
+    let input = document.querySelector('input')
+    str = input.value
+    str = str.toUpperCase()
+
+    let aph1 = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M']
+    let aph2 = ['N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+    let arr = []
+    let regex = /[a-z]/i
+    for(let x = 0; x < str.length; x++){
+      if(regex.test(str[x])){
+        if(aph1.includes(str[x])){
+          arr.push(aph2[aph1.indexOf(str[x])])
+        }
+        else {
+          arr.push(aph1[aph2.indexOf(str[x])])
+        }
+      }
+      else {
+        arr.push(str[x])
+      }
+  
+    }
+    return para.textContent = arr.join('')
+  }
+
+</script>
+</html>

@@ -1,0 +1,24 @@
+function rot(str){
+  let input = document.querySelector('input')
+    num = input.value
+    
+  let aph1 = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M']
+  let aph2 = ['N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+  let arr = []
+  let regex = /[a-z]/i
+  for(let x = 0; x < str.length; x++){
+    if(regex.test(str[x])){
+      if(aph1.include(str[x])){
+        arr.push(aph2[aph1.indexOf(str[x])])
+      }
+      else {
+        arr.push(aph1[aph2.indexOf(str[x])])
+      }
+    }
+    else {
+      arr.push(str[x])
+    }
+
+  }
+  return arr.join('')
+}

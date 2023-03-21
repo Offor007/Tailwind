@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ROMAN CONVERTER</title>
+  <link rel="stylesheet" href="../dist/output.css">
+</head>
+<body>
+<main class=" bg-slate-600 h-screen flex justify-center items-center">
+  <div class="shadow-2xl bg-sky-900 my-7 border-double 
+  border-x-4 border-lime-400 text-lime-400 flex-col h-[100%] w-96 ml-2.5 items-center text-center shadow-80 rounded-2xl ">
+    
+    <label for="text" class="font-sans m-14 block text-6xl font-bold text-center w-[50%]
+    ">Number</label>
+    <input type="text" name="num" id="num" min="0" class=" py-1.5 items-center 3 w-2/3 bg-transparent border-double 
+    border-y-4 border-lime-400">
+    <button class="py-1.5 bg-slate-3 w-2/3 mt-6 rounded-sm
+    hover:text-sky-900 hover:bg-lime-400 text-lime-400 bg-black my-7">Convert to Roman</button>
+
+  </div>
+</main>
+
+</body>
+<script>
+  let para = document.createElement('p')
+  let div = document.querySelector('div')
+
+  div.appendChild(para)
+
+      let input = document.querySelectorAll('input')
+
+      let btn = document.querySelector('button')
+      para = document.querySelector('p')
+      para.style.background = 'White'
+      para.style.textcolor = 'black'
+
+      btn.addEventListener('click', convertToRoman)
+      
+      function convertToRoman(str) {
+    let input = document.querySelector('input')
+      str = input.value
+    let regex = /[a-z0-9]/gi
+    let result = str.match(regex);
+    let result2 = result.slice();
+    result2.reverse()
+
+      
+ /* console.log(result); 
+ console.log(result2); */ 
+console.log(result2.join('') == result.join(''))
+}
+
+  
+
+
+
+
+</script>
+</html>
